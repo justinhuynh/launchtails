@@ -14,7 +14,12 @@ class DrinksController < ApplicationController
   end
 
   def index
-    @drinks = Drink.all
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @drinks = @category.drinks
+    else
+      @drinks = Drink.all
+    end
   end
 
   protected
