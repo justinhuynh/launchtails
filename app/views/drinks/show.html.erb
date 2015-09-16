@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @drink.title %></h1>
+
+<table>
+    <tr>
+      <th>Description</th>
+      <td><%= @drink.description %></td>
+    </tr>
+    <tr>
+      <th>Featured</th>
+      <td><%= @drink.featured %></td>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <td><%= link_to @drink.category.name, category_path(@drink.category) %></td>
+    </tr>
+    <tr>
+      <th>Alcohol Level</th>
+      <td><%= @drink.alcohol_level %></td>
+    </tr>
+</table>
+
+<%= link_to 'Back', drinks_path %>

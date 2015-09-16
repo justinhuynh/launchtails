@@ -22,6 +22,10 @@ class DrinksController < ApplicationController
     end
   end
 
+  def show
+    @drink = Drink.find(params[:id])
+  end
+
   protected
   def drink_params
     params.require(:drink).permit(:title, :description)

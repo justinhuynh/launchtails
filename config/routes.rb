@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :drinks, except: [:edit, :update, :destroy]
   end
 
-  resources :drinks, only: [:index]
+  resources :drinks, only: [:index, :show]
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @category.name %></h1>
+
+<%- if !@drinks.empty? -%>
+  <table>
+    <tr>
+      <th>Drink Name</th>
+    </tr>
+
+    <%- @drinks.each do |drink| -%>
+      <tr>
+        <td><%= link_to drink.title, drink_path(drink) %></td>
+      </tr>
+    <%- end -%>
+  </table>
+<%- end -%>
+
+<%= link_to 'Back', categories_path %>
